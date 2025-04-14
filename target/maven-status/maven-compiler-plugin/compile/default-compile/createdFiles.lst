@@ -1,4 +1,5 @@
 controladores\ControladorServlet.class
+controladores\AdminReservasServlet.class
 com\mycompany\reservasapp\JakartaRestConfiguration.class
 controladores\BuscarHotelesServlet.class
 controladores\DetalleHabitacionServlet.class
@@ -6,6 +7,7 @@ controladores\MisReservasServlet.class
 modelo\Habitacion.class
 com\mycompany\reservasapp\resources\JakartaEE8Resource.class
 controladores\ReservarServlet.class
+controladores\EliminarReservaServlet.class
 controladores\RegistroServlet.class
 modelo\Reserva.class
 controladores\LoginServlet.class

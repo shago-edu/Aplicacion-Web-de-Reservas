@@ -1,8 +1,10 @@
 C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\com\mycompany\reservasapp\JakartaRestConfiguration.java
 C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\com\mycompany\reservasapp\resources\JakartaEE8Resource.java
+C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\controladores\AdminReservasServlet.java
 C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\controladores\BuscarHotelesServlet.java
 C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\controladores\ControladorServlet.java
 C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\controladores\DetalleHabitacionServlet.java
+C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\controladores\EliminarReservaServlet.java
 C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\controladores\LoginServlet.java
 C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\controladores\LogoutServlet.java
 C:\Users\DesktopAMD\OneDrive\Documentos\NetBeansProjects\ReservasApp\src\main\java\controladores\MisReservasServlet.java

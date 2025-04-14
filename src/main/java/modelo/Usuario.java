@@ -19,6 +19,8 @@ public class Usuario implements Serializable {
     private String email;
     private String contrasena;
 
+    private String rol = "usuario"; // NUEVO CAMPO
+
     @OneToMany(mappedBy = "usuario")
     private List<Reserva> reservas;
 
@@ -62,5 +64,13 @@ public class Usuario implements Serializable {
 
     public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }
