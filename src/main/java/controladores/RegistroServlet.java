@@ -43,7 +43,7 @@ public class RegistroServlet extends HttpServlet {
         EntityManager em = emf.createEntityManager();
 
         try {
-            // Validar si el email ya existe (opcional, pero recomendado)
+            // Validar si el email ya existe
             TypedQuery<Usuario> query = em.createQuery(
                 "SELECT u FROM Usuario u WHERE u.email = :email", Usuario.class);
             query.setParameter("email", email);
@@ -64,10 +64,11 @@ public class RegistroServlet extends HttpServlet {
             em.persist(nuevoUsuario);
             tx.commit();
 
-            request.setAttribute("mensaje", "Registro exitoso, ahora puedes iniciar sesión");
+            request.setAttribute("mensaje", "Registro exitoso, ahora puedes iniciar sesión.");
             request.getRequestDispatcher("login.jsp").forward(request, response);
 
-        } catch (IOException | ServletException e) {
+        } catch (Exception e) {
+            e.printStackTrace();
             request.setAttribute("mensaje", "Error al registrar el usuario.");
             request.getRequestDispatcher("registro.jsp").forward(request, response);
         } finally {

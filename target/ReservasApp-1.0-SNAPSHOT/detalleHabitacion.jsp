@@ -14,31 +14,42 @@
     <title>Habitaciones Disponibles</title>
 </head>
 <body>
-    <h1>Habitaciones</h1>
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Habitaciones disponibles</h2>
 
     <c:if test="${not empty mensaje}">
-        <p style="color:red;">${mensaje}</p>
+        <div class="alert alert-danger text-center">${mensaje}</div>
     </c:if>
 
     <c:if test="${empty habitaciones}">
-        <p>No hay habitaciones disponibles.</p>
+        <div class="alert alert-warning text-center">No hay habitaciones disponibles.</div>
     </c:if>
 
-    <c:forEach var="hab" items="${habitaciones}">
-        <div>
-            <p><strong>N°:</strong> ${hab.numero}</p>
-            <p><strong>Tipo:</strong> ${hab.tipo}</p>
-            <p><strong>Precio:</strong> $${hab.precio}</p>
-            <form action="ReservarServlet" method="post">
-                <input type="hidden" name="habitacionId" value="${hab.id}">
-                <label>Desde:</label>
-                <input type="date" name="fechaInicio" required>
-                <label>Hasta:</label>
-                <input type="date" name="fechaFin" required>
-                <button type="submit">Reservar</button>
-            </form>
-        </div>
-        <hr>
-    </c:forEach>
+    <div class="row">
+        <c:forEach var="hab" items="${habitaciones}">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <p><strong>N°:</strong> ${hab.numero}</p>
+                        <p><strong>Tipo:</strong> ${hab.tipo}</p>
+                        <p><strong>Precio:</strong> $${hab.precio}</p>
+                        <form action="ReservarServlet" method="post">
+                            <input type="hidden" name="habitacionId" value="${hab.id}">
+                            <div class="mb-2">
+                                <label>Desde:</label>
+                                <input type="date" class="form-control" name="fechaInicio" required>
+                            </div>
+                            <div class="mb-2">
+                                <label>Hasta:</label>
+                                <input type="date" class="form-control" name="fechaFin" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Reservar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</div>
 </body>
 </html>

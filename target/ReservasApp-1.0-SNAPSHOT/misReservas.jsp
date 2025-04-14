@@ -14,19 +14,26 @@
     <title>Mis Reservas</title>
 </head>
 <body>
-    <h1>Mis Reservas</h1>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Mis Reservas</h2>
 
     <c:if test="${empty reservas}">
-        <p>No tienes reservas registradas.</p>
+        <div class="alert alert-warning text-center">No tienes reservas registradas.</div>
     </c:if>
 
-    <c:forEach var="res" items="${reservas}">
-        <p>
-            <strong>Hotel:</strong> ${res.habitacion.hotel.nombre}<br>
-            <strong>Habitación:</strong> ${res.habitacion.numero} <br>
-            <strong>Desde:</strong> ${res.fechaInicio} hasta ${res.fechaFin}
-        </p>
-        <hr>
-    </c:forEach>
+    <div class="row">
+        <c:forEach var="res" items="${reservas}">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <p><strong>Hotel:</strong> ${res.habitacion.hotel.nombre}</p>
+                        <p><strong>Habitación:</strong> ${res.habitacion.numero}</p>
+                        <p><strong>Fecha:</strong> ${res.fechaInicio} a ${res.fechaFin}</p>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</div>
 </body>
 </html>

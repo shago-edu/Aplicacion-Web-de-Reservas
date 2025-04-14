@@ -6,19 +6,30 @@
 <html>
 <head>
     <title>Buscador de Hoteles</title>
+    <!-- Bootstrap ya está incluido desde header.jsp -->
 </head>
 <body>
-    <h1>Buscar Hoteles</h1>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Buscar Hoteles</h1>
 
-    <form action="ControladorServlet" method="get">
-        <input type="hidden" name="accion" value="buscar">
-        <label for="ciudad">Ciudad:</label>
-        <input type="text" name="ciudad" required>
-        <button type="submit">Buscar</button>
-    </form>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow p-4">
+                <form action="ControladorServlet" method="get">
+                    <input type="hidden" name="accion" value="buscar">
+                    <div class="mb-3">
+                        <label for="ciudad" class="form-label">Ciudad:</label>
+                        <input type="text" class="form-control" name="ciudad" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Buscar</button>
+                </form>
 
-    <c:if test="${not empty mensaje}">
-        <p style="color:red;">${mensaje}</p>
-    </c:if>
+                <c:if test="${not empty mensaje}">
+                    <div class="alert alert-danger mt-3">${mensaje}</div>
+                </c:if>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
